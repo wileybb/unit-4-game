@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>CRYSTAL GAME</h1>
+    <h3>Score: </h3>
+    <h3 id="score-text"> </h3>
+    <h3>Goal: </h3>
+    <h3 id="goal-text"> </h3>
+    <h3 id="reset-text">Reset</h3>
+    <h3 id="win-text"></h3>
+    <img id="crystal-1" src="assets/images/crystal-1.jpg">
+    <img id="crystal-2" src="assets/images/crystal-2.jpg">
+    <img id="crystal-3" src="assets/images/crystal-3.jpg">
+
+
+    <script type="text/javascript">
+        
+        
+
+        
+
+        
+
+
+        
+            var computerNumber = Math.floor((Math.random()*100)+15);
+            var userNumber = 0;
+            var firstCrystalNumber = Math.floor(Math.random()*20)+3;
+            var secondCrystalNumber = Math.floor(Math.random()*20)+3;
+            var thirdCrystalNumber = Math.floor(Math.random()*20)+3;
+
+            $("#score-text").text(userNumber);
+            $("#goal-text").text(computerNumber);
+        
+        
+        $('#reset-text').on('click',function(){
+            var computerNumber = Math.floor((Math.random()*100)+15);
+            var userNumber = 0;
+            var firstCrystalNumber = Math.floor(Math.random()*20)+3;
+            var secondCrystalNumber = Math.floor(Math.random()*20)+3;
+            var thirdCrystalNumber = Math.floor(Math.random()*20)+3;
+            
+            $("#score-text").empty();
+            $("#goal-text").empty();
+
+            $("#score-text").text(userNumber);
+            $("#goal-text").text(computerNumber);
+            
+        });
+       
+        
+        
+        $('#crystal-1').on('click',function(){
+            
+
+            userNumber = userNumber + firstCrystalNumber;
+            $("#score-text").text(userNumber);
+        
+            winChecker;
+            lossChecker;
+        });
+
+        $('#crystal-2').on('click',function(){
+            userNumber = userNumber + secondCrystalNumber;
+            $("#score-text").text(userNumber);
+            
+        });
+
+        $('#crystal-3').on('click',function(){
+            userNumber = userNumber + thirdCrystalNumber;
+            $("#score-text").text(userNumber);
+            
+        });
+
+        function winChecker() {
+            if(userNumber = computerNumber){
+                console.log("YOU WIN MY FRIEND")
+            };
+        };
+        function  lossChecker() {
+            if(userNumber > computerNumber){
+                console.log("YOU LOSE!");
+            };
+
+        };
+
+
+
+    </script>
+</body>
+
+
+</html>
